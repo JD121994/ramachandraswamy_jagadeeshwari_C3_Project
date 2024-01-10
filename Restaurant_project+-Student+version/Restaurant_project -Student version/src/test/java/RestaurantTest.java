@@ -24,13 +24,22 @@ class RestaurantTest {
 		assertTrue(result);
     }
 
-    @Test
-    public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
-        //WRITE UNIT TEST CASE HERE
+	@Test
+	public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time()
+	{
+		LocalTime openingTime = LocalTime.parse("10:30:00");
+		LocalTime closingTime = LocalTime.parse("20:00:00");
 
-    }
+		restaurant = new Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
 
-    //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		boolean result = restaurant.isRestaurantOpen();
+
+		assertFalse(result);
+
+		// failing test case
+	}
+
+	// <<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
